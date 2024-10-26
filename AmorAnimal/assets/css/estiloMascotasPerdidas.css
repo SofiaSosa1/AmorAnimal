@@ -1,0 +1,592 @@
+/*--- FORMATO MOBILE ---*/
+
+/*CUERPO (BODY) de la pagina*/
+#cuerpo{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "Nunito", sans-serif;
+    padding-top: 18vw;
+}
+
+
+/*ENCABEZADO*/
+/* Encabezado (nav) */
+#navegador{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 18vw; /* Puedes ajustar el tamaño según la vista */
+    z-index: 1000; /* Asegúrate de que tenga un valor alto para que esté encima del contenido */
+    background-color: white; /* Asegúrate de que tenga un fondo visible */
+    box-shadow: 0 0 18px rgba(202, 33, 33, 0.5);
+}
+
+#navNombre{
+    font-size: 4vw;
+    font-weight: bold;
+    color: rgb(190, 8, 8);
+}
+
+.login-button {
+    background-color: rgb(190, 8, 8);
+    color: rgb(255, 255, 255);
+    font-size: 4vw;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+#botonAbrirMenu{
+    border: none;
+    font-size: 1.25rem;
+}
+
+#botonAbrirMenu:focus, #botonCerrarMenu:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link{
+    position: relative;
+}
+.nav-item{
+    color: white;
+}
+
+.submitBtnCerrar {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.submitBtnCerrar:hover {
+    box-shadow: 0 0 8px rgb(98, 98, 98);
+}
+
+#botonCerrarSesion{
+    display: none;
+}
+
+
+
+
+
+/*MAIN*/
+main{
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.mensaje_mascota{
+    height: 100%;
+    margin-bottom: 12vw;
+    padding-top: 5vw;
+    background-color: rgba(238, 49, 49, 0.658);
+}
+
+.mensaje_mascota h2{
+    margin-top: 5vw;
+    margin-left: 5vw;
+    font-weight: bold;
+}
+
+.mensaje_mascota h3{
+    margin-top: 1vw;
+    margin-left: 5vw;
+    margin-bottom: 8vw;
+    font-weight: bold;
+}
+
+.crearFolleto-button {
+    background-color: rgb(190, 8, 8);
+    color: white;
+    font-size: 5VW;
+    padding: 8px 20px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-left: 5vw;
+    margin-bottom: 15vw;
+}
+
+
+#published-section{
+    margin-top: 5vw;
+    margin-bottom: 180vw;
+    padding: 1vw;
+}
+
+#published-section h2{
+    font-size: 7vw;
+    color: black;
+    padding: 1vw;
+    margin: 0;
+    border-bottom: 1px solid black;
+}
+
+
+/*PIE DE PÁGINA*/
+footer{
+    background-color: rgb(255, 255, 255);
+    border-top: solid black;
+}
+.contenedorDatosRedes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.datosYredes{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12vw;
+    justify-items: center;
+    align-items: center;
+    width: 50vw;
+    padding: 4vw;
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+}
+
+.datos h1{
+    font-weight: bold;
+    font-size: 4.6vw;
+    padding-bottom: 3vw;
+}
+.datos h2{
+    font-size: 3.6vw;
+    margin: 0;
+}
+
+.redes h1{
+    font-weight: bold;
+    font-size: 4.6vw;
+    padding-bottom: 3vw;
+}
+.redes .iconos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 3.3vw;
+}
+.iconos i{
+    font-size: 5.6vw;
+    color: black;
+}
+.iconos a{
+    border-radius: 50%;
+    transition: transform 0.25s;
+}
+.iconos a:hover{
+    transform: scale(1.2);
+}
+
+footer p{
+    background-color: rgb(89, 89, 89);
+    text-align: center;
+    color: white;
+    font-size: 3vw;
+    padding: 5vw;
+    margin: 0;
+}
+
+/*--- FORMATO TABLET ---*/
+@media screen and (min-width: 768px){
+    /*ENCABEZADO*/
+    #contenedorImagenLogo img{
+        height: 20vw;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+    
+    }
+
+    /*MAIN*/
+    #presentacion{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30vw;
+        padding-bottom: 60vw;
+        height: 15vw;
+    }
+    
+
+    /*PIE DE PÁGINA*/
+    footer{
+        background-color: rgb(255, 255, 255);
+    }
+    .contenedorDatosRedes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .datosYredes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 20vw;
+        justify-items: center;
+        align-items: center;
+        width: 80vw;
+        padding: 4vw;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+    .datos h1{
+        font-weight: bold;
+        font-size: 3vw;
+        padding-bottom: 3vw;
+    }
+    .datos h2{
+        font-size: 2vw;
+        margin: 0;
+    }
+    .redes h1{
+        font-weight: bold;
+        font-size: 3vw;
+        padding-bottom: 3vw;
+    }
+    .redes .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.8vw;
+    }
+    .iconos i{
+        font-size: 4vw;
+        color: black;
+    }
+    .iconos a{
+        border-radius: 50%;
+        transition: transform 0.25s;
+    }
+    .iconos a:hover{
+        transform: scale(1.2);
+    }
+    footer p{
+        background-color: rgb(89, 89, 89);
+        text-align: center;
+        color: white;
+        font-size: 1.5vw;
+        padding: 3vw;
+        margin: 0;
+    }
+}
+/*--- FORMATO LAPTOP ---*/
+@media screen and (min-width: 1024PX){
+    /*ENCABEZADO*/
+    #contenedorImagenLogo img{
+        height: 10vw;
+        padding-top: 1.5vw;
+        padding-bottom: 1.5vw;
+    }
+
+    .offcanvas-body a{
+        padding: 0;
+        color: black;
+        font-size: large;
+    }
+
+    .offcanvas-body a:hover{
+        padding: 0;
+        color: black;
+        font-size: large;
+    }
+
+    .nav-link::before{
+        content:"";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+        border-bottom: 0.3VW solid black;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+
+
+    /*MAIN*/
+    #presentacion{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 8vw;
+        padding-bottom: 30vw;
+        height: 15vw;
+    }
+    #saludo h1{
+        color: black;
+        text-align: center;
+        font-size: 8vw;
+        margin-bottom: 3vw;
+    }
+    #saludo p{
+        color: black;
+        font-size: 2vw;
+        text-align: center;
+    }
+
+    /* CARRUSEL */
+    .carousel-inner{
+        height: 35vw;
+    }
+    .carousel-item{
+        height: 35vw;
+    }
+
+
+    /*PIE DE PÁGINA*/
+    footer{
+        background-color: rgb(255, 255, 255);
+    }
+    .contenedorDatosRedes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 20vw;
+        border-top: solid;
+    }
+    .datosYredes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 20vw;
+        justify-items: center;
+        align-items: center;
+        width: 80vw;
+        padding: 4vw;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+    .datos h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .datos h2{
+        font-size: 1vw;
+        margin: 0;
+    }
+    .redes h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .redes .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.9vw;
+    }
+    .iconos i{
+        font-size: 2vw;
+        color: black;
+    }
+    .iconos a{
+        border-radius: 50%;
+        transition: transform 0.25s;
+    }
+    .iconos a:hover{
+        transform: scale(1.2);
+    }
+    footer p{
+        background-color: rgb(89, 89, 89);
+        text-align: center;
+        color: white;
+        font-size: 0.8vw;
+        padding: 1.5vw;
+        margin: 0;
+    }
+}
+
+/*--- FORMATO LAPTOP L ---*/
+@media screen and (min-width: 1440PX){
+    /*CUERPO (BODY) de la pagina*/
+    #cuerpo{
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        font-family: "Nunito", sans-serif;
+        padding-top: 5vw;
+    }
+
+
+    /*ENCABEZADO*/
+    /* Encabezado (nav) */
+    #navegador{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 5vw; /* Puedes ajustar el tamaño según la vista */
+        z-index: 1000; /* Asegúrate de que tenga un valor alto para que esté encima del contenido */
+        background-color: white; /* Asegúrate de que tenga un fondo visible */
+        box-shadow: 0 0 18px rgba(202, 33, 33, 0.5);
+        
+    }
+
+    #navNombre{
+        font-size: 2vw;
+        font-weight: bold;
+        color: rgb(190, 8, 8);
+    }
+
+    .login-button {
+        background-color: rgb(190, 8, 8);
+        color: rgb(255, 255, 255);
+        font-size: 1vw;
+        padding: 8px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    #navegador:hover{
+        background-color: rgb(255, 251, 251);
+        transition: 0.3s;
+    }
+
+    .nav-link::before{
+        content:"";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 1.8vw;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+        border-top: 0.1VW solid black;
+        border-bottom: 0.1VW solid black;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+
+    /*MAIN*/
+    .mensaje_mascota{
+        margin-bottom: 5vw;
+        padding: 3vw 2VW;
+        background-color: rgba(238, 49, 49, 0.658);
+    }
+    
+    .mensaje_mascota h2{
+        font-weight: bold;
+    }
+    
+    .mensaje_mascota h3{
+        margin-bottom: 2vw;
+        font-weight: bold;
+    }
+    
+    .crearFolleto-button {
+        background-color: rgb(190, 8, 8);
+        color: white;
+        font-size: 1.2VW;
+        padding: 8px 20px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+        
+    .crearFolleto-button:hover {
+        background-color: rgb(230, 42, 42);
+        box-shadow: 0 0 8px black;
+    }
+    
+    #published-section{
+        margin-top: 5vw;
+        margin-bottom: 180vw;
+        padding: 1vw;
+    }
+    
+    #published-section h2{
+        font-size: 2vw;
+        color: black;
+        padding: 1vw;
+        margin: 0;
+        border-bottom: 1px solid black;
+    }
+
+
+    /*PIE DE PÁGINA*/
+    footer{
+        background-color: rgb(255, 255, 255);
+    }
+    .contenedorDatosRedes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 20vw;
+        border-top: solid;
+    }
+    .datosYredes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 20vw;
+        justify-items: center;
+        align-items: center;
+        width: 80vw;
+        padding: 4vw;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+    .datos h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .datos h2{
+        font-size: 1vw;
+        margin: 0;
+    }
+    .redes h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .redes .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.9vw;
+    }
+    .iconos i{
+        font-size: 2vw;
+        color: black;
+    }
+    .iconos a{
+        border-radius: 50%;
+        transition: transform 0.25s;
+    }
+    .iconos a:hover{
+        transform: scale(1.2);
+    }
+    footer p{
+        background-color: rgb(89, 89, 89);
+        text-align: center;
+        color: white;
+        font-size: 0.8vw;
+        padding: 1.5vw;
+        margin: 0;
+    }
+}

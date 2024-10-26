@@ -1,0 +1,397 @@
+/*--- FORMATO MOBILE ---*/
+
+/*CUERPO (BODY) de la pagina*/
+#cuerpo{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "Nunito", sans-serif;
+    padding-top: 18vw;
+}
+
+
+/*ENCABEZADO*/
+/* Encabezado (nav) */
+#navegador{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 18vw; /* Puedes ajustar el tamaño según la vista */
+    z-index: 1000; /* Asegúrate de que tenga un valor alto para que esté encima del contenido */
+    background-color: white; /* Asegúrate de que tenga un fondo visible */
+    box-shadow: 0 0 18px rgba(202, 33, 33, 0.5);
+}
+
+#navNombre{
+    font-size: 4vw;
+    font-weight: bold;
+    color: rgb(190, 8, 8);
+}
+
+.login-button {
+    background-color: rgb(190, 8, 8);
+    color: rgb(255, 255, 255);
+    font-size: 4vw;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+#botonAbrirMenu{
+    border: none;
+    font-size: 1.25rem;
+}
+
+#botonAbrirMenu:focus, #botonCerrarMenu:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link{
+    position: relative;
+}
+.nav-item{
+    color: white;
+}
+
+
+/*APARTADO PARA PERSONALIZAR FOLLETO*/
+
+.container {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h1{
+    margin-top: 15vw;
+    font-weight: bold;
+}
+
+.container h3{
+    margin-top: 2vw;
+    color: #333;
+}
+
+.templates {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr;
+    gap: 14vw;
+    margin-top: 10vw;
+}
+
+#botonLoEncontre{
+    background-color: white;
+    width: 50vw;
+    height: 10vw;
+    margin-bottom: 5vw;
+    border-radius: 10px;
+    padding: 1vw;
+}
+
+#botonLoEncontre p{
+    color: black;
+}
+
+/* Formas de imágenes para las diferentes plantillas */
+.formaCorazon {
+    clip-path: polygon(0 25%, 26% 14%, 50% 29%, 74% 16%, 100% 26%, 100% 56%, 75% 78%, 49% 100%, 21% 75%, 0 56%);
+    width: 80vw;
+    height: 80vw;
+}
+
+.formaEstrella {
+    clip-path: polygon(50% 0%, 66% 27%, 98% 35%, 81% 61%, 79% 91%, 50% 80%, 21% 91%, 20% 59%, 2% 35%, 33% 27%);
+    width: 80vw;
+    height: 80vw;
+}
+
+.formaRedonda {
+    clip-path: circle(46.6% at 50% 50%);
+    width: 80vw;
+    height: 80vw;
+}
+
+
+
+.template-body {
+    margin-top: 10px;
+}
+
+.template-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.edit-section {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#edit-form {
+    margin-top: 20px;
+}
+
+#edit-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#edit-form input, #edit-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #494949;
+}
+
+#fileInput {
+    display: none;
+}
+
+/* Estiliza el botón personalizado */
+
+
+/* Estilo para la vista previa de la imagen */
+#imagePreview {
+    margin-top: 20px;
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    display: none; /* Inicialmente oculta */
+}
+
+.template1 {
+    background-color: rgb(245, 118, 213);
+    margin:10vw;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.template2 {
+    background-color: gold;
+    margin:10vw;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.template3 {
+    background-color: darkorchid;
+    margin:10vw;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.template3 img{
+    width: 80vw;
+}
+
+
+.edit-section {
+    display: none; /* Oculta el formulario por defecto */
+}
+
+#customButton {
+    background-color: rgb(190, 8, 8);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#customButton:hover {
+    background-color: #b31800;
+}
+
+#imagePreview {
+    margin-top: 20px;
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    display: none; /* Inicialmente oculta */
+}
+
+/* Estilos específicos para las plantillas */
+
+/*--- FORMATO LAPTOP L ---*/
+@media screen and (min-width: 1440PX){
+    /*CUERPO (BODY) de la pagina*/
+    #cuerpo{
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        font-family: "Nunito", sans-serif;
+        padding-top: 5vw;
+    }
+
+
+    /*ENCABEZADO*/
+    /* Encabezado (nav) */
+    #navegador{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 5vw; /* Puedes ajustar el tamaño según la vista */
+        z-index: 1000; /* Asegúrate de que tenga un valor alto para que esté encima del contenido */
+        background-color: white; /* Asegúrate de que tenga un fondo visible */
+        box-shadow: 0 0 18px rgba(202, 33, 33, 0.5);
+        
+    }
+
+    #navNombre{
+        font-size: 2vw;
+        font-weight: bold;
+        color: rgb(190, 8, 8);
+    }
+
+    .login-button {
+        background-color: rgb(190, 8, 8);
+        color: rgb(255, 255, 255);
+        font-size: 1vw;
+        padding: 8px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    #navegador:hover{
+        background-color: rgb(255, 251, 251);
+        transition: 0.3s;
+    }
+
+    .nav-link::before{
+        content:"";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 1.8vw;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+        border-top: 0.1VW solid black;
+        border-bottom: 0.1VW solid black;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+
+    /*FOLLETOS*/
+
+    .container h1{
+        margin-top: 5vw;
+        font-weight: bold;
+    }
+    .container h3{
+        margin-top: 1vw;
+    }
+    
+    .templates {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+        gap: 3vw; /* Espacio entre columnas */
+        display: flex;
+        justify-content: space-between; /* Distribuye los elementos a los extremos */
+        align-items: center; /* Alinea verticalmente los elementos */
+        margin-top: 2vw;
+        padding: 0;
+    }
+
+    .template{
+        width: 80%;
+        height: auto;
+        border-radius: 10px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .template img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /*PIE DE PÁGINA*/
+    footer{
+        background-color: rgb(255, 255, 255);
+    }
+    .contenedorDatosRedes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 20vw;
+        border-top: solid;
+    }
+    .datosYredes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 20vw;
+        justify-items: center;
+        align-items: center;
+        width: 80vw;
+        padding: 4vw;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+    .datos h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .datos h2{
+        font-size: 1vw;
+        margin: 0;
+    }
+    .redes h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .redes .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.9vw;
+    }
+    .iconos i{
+        font-size: 2vw;
+        color: black;
+    }
+    .iconos a{
+        border-radius: 50%;
+        transition: transform 0.25s;
+    }
+    .iconos a:hover{
+        transform: scale(1.2);
+    }
+    footer p{
+        background-color: rgb(89, 89, 89);
+        text-align: center;
+        color: white;
+        font-size: 0.8vw;
+        padding: 1.5vw;
+        margin: 0;
+    }
+}

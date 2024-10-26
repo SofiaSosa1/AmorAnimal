@@ -1,0 +1,886 @@
+/*--- FORMATO MOBILE ---*/
+
+/*CUERPO (BODY) de la pagina*/
+#cuerpo{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "Nunito", sans-serif;
+    padding-top: 18vw;
+}
+
+
+/*ENCABEZADO*/
+#navegador{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 18vw; /* Puedes ajustar el tamaño según la vista */
+    z-index: 1000; /* Asegúrate de que tenga un valor alto para que esté encima del contenido */
+    background-color: white; /* Asegúrate de que tenga un fondo visible */
+    box-shadow: 0 0 18px rgba(202, 33, 33, 0.5);
+}
+
+#navNombre{
+    font-size: 4vw;
+    font-weight: bold;
+    color: rgb(190, 8, 8);
+}
+
+.login-button {
+    background-color: rgb(190, 8, 8);
+    color: rgb(255, 255, 255);
+    font-size: 4vw;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
+#botonAbrirMenu{
+    border: none;
+    font-size: 1.25rem;
+}
+
+#botonAbrirMenu:focus, #botonCerrarMenu:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link{
+    position: relative;
+}
+.nav-item{
+    color: white;
+}
+
+.submitBtnCerrar {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.submitBtnCerrar:hover {
+    box-shadow: 0 0 8px rgb(98, 98, 98);
+}
+
+#botonCerrarSesion{
+    display: none;
+}
+
+
+/*MAIN*/
+main{
+    display: grid;
+    grid-template-rows: auto;
+}
+
+
+/* FORMULARIO */
+
+.signupFrm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 80%;
+    padding-top: 7vw ;
+    padding-bottom: 7vw ;
+    padding-left: 9vw;
+    padding-right: 9vw;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .5);
+    margin-top: 25vw;
+    margin-bottom: 20vw;
+}
+
+.title {
+    font-size: 8vw; /* Título más grande en móviles */
+    text-align: center;
+    margin-bottom: 5vw;
+}
+
+.inputContainer {
+    position: relative;
+    height: 12vw;
+    width: 100%;
+    margin-bottom: 5vw;
+}
+
+.input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 5vw;
+    outline: none;
+    background: none;
+    z-index: 1;
+    padding: 0 6vw;
+}
+
+::placeholder {
+    color: transparent;
+}
+
+.label {
+    position: absolute;
+    top: 3vw;
+    left: 4vw;
+    padding: 0 1vw;
+    background-color: white;
+    color: #aeafb1;
+    font-size: 4vw;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+.contenedorBotonRegistrar {
+    text-align: center;
+}
+
+.submitBtn {
+    text-align: center;
+    padding: 3vw 8vw;
+    border: none;
+    background-color: rgb(190, 8, 8);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 4.5vw;
+    margin-top: 1vw;
+}
+
+.input:focus + .label {
+    top: -2vw;
+    left: 2vw;
+    z-index: 10;
+    font-size: 4vw;
+    font-weight: 600;
+    color: black;
+}
+
+.input:focus {
+    border: 2px solid rgb(202, 33, 33);
+}
+
+.input:not(:placeholder-shown) + .label {
+    top: -2vw;
+    left: 2vw;
+    z-index: 10;
+    font-size: 4vw;
+    font-weight: 600;
+}
+
+#contenedor-botonVolver{
+    display: flex;
+    justify-content: center;
+}
+
+#botonVolver{
+    color: #aeafb1;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+}
+
+#botonVolver h3{
+    font-size: 5vw;
+    margin: 1vw;
+}
+#botonVolver p{
+    font-size: 4vw;
+    margin-left: 2vw;
+    margin: 1vw;
+}
+
+
+/* INGRESO ADMINISTRADOR */
+.submitBtnCerrar {
+    display: block;
+    margin-left: auto;
+    padding: 15px 30px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+    display: none;
+}
+
+.submitBtnCerrar:hover {
+    background-color: rgb(124, 124, 124);
+    transform: translateY(-2px);
+}
+
+
+
+/*PIE DE PÁGINA*/
+footer{
+    background-color: rgb(255, 255, 255);
+    border-top: solid black;
+    margin-top: 15vw;
+}
+.contenedorDatosRedes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.datosYredes{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12vw;
+    justify-items: center;
+    align-items: center;
+    width: 50vw;
+    padding: 4vw;
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+}
+
+.datos h1{
+    font-weight: bold;
+    font-size: 4.6vw;
+    padding-bottom: 3vw;
+}
+.datos h2{
+    font-size: 3.6vw;
+    margin: 0;
+}
+
+.redes h1{
+    font-weight: bold;
+    font-size: 4.6vw;
+    padding-bottom: 3vw;
+}
+.redes .iconos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 3.3vw;
+}
+.iconos i{
+    font-size: 5.6vw;
+    color: black;
+}
+.iconos a{
+    border-radius: 50%;
+    transition: transform 0.25s;
+}
+.iconos a:hover{
+    transform: scale(1.2);
+}
+
+footer p{
+    background-color: rgb(89, 89, 89);
+    text-align: center;
+    color: white;
+    font-size: 3vw;
+    padding: 5vw;
+    margin: 0;
+}
+
+
+
+/*--- FORMATO TABLET ---*/
+@media screen and (min-width: 768px){
+    /*ENCABEZADO*/
+    #contenedorImagenLogo img{
+        height: 20vw;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+    
+    }
+
+    /*MAIN*/
+    #presentacion{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30vw;
+        padding-bottom: 60vw;
+        height: 15vw;
+    }
+    
+
+    /*PIE DE PÁGINA*/
+    footer{
+        background-color: rgb(255, 255, 255);
+    }
+    .contenedorDatosRedes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .datosYredes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 20vw;
+        justify-items: center;
+        align-items: center;
+        width: 80vw;
+        padding: 4vw;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+    .datos h1{
+        font-weight: bold;
+        font-size: 3vw;
+        padding-bottom: 3vw;
+    }
+    .datos h2{
+        font-size: 2vw;
+        margin: 0;
+    }
+    .redes h1{
+        font-weight: bold;
+        font-size: 3vw;
+        padding-bottom: 3vw;
+    }
+    .redes .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.8vw;
+    }
+    .iconos i{
+        font-size: 4vw;
+        color: black;
+    }
+    .iconos a{
+        border-radius: 50%;
+        transition: transform 0.25s;
+    }
+    .iconos a:hover{
+        transform: scale(1.2);
+    }
+    footer p{
+        background-color: rgb(89, 89, 89);
+        text-align: center;
+        color: white;
+        font-size: 1.5vw;
+        padding: 3vw;
+        margin: 0;
+    }
+}
+/*--- FORMATO LAPTOP ---*/
+@media screen and (min-width: 1024PX){
+    nav:hover{
+        background-color: rgb(255, 140, 140);
+        transition: 0.3s;
+    }
+    /*ENCABEZADO*/
+    #contenedorImagenLogo img{
+        height: 10vw;
+        padding-top: 1.5vw;
+        padding-bottom: 1.5vw;
+    }
+
+    .offcanvas-body a{
+        padding: 0;
+        color: black;
+        font-size: large;
+    }
+
+    .offcanvas-body a:hover{
+        padding: 0;
+        color: black;
+        font-size: large;
+    }
+
+    .nav-link::before{
+        content:"";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+        border-bottom: 0.3VW solid black;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+    .floating-cart {
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    /*MAIN*/
+    #presentacion{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 8vw;
+        padding-bottom: 30vw;
+        height: 15vw;
+    }
+    #saludo h1{
+        color: black;
+        text-align: center;
+        font-size: 8vw;
+        margin-bottom: 3vw;
+    }
+    #saludo p{
+        color: black;
+        font-size: 2vw;
+        text-align: center;
+    }
+
+    /* CARRUSEL */
+    .carousel-inner{
+        height: 35vw;
+    }
+    .carousel-item{
+        height: 35vw;
+    }
+
+
+    /*PIE DE PÁGINA*/
+    footer{
+        background-color: rgb(255, 255, 255);
+    }
+    .contenedorDatosRedes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 20vw;
+        border-top: solid;
+    }
+    .datosYredes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 20vw;
+        justify-items: center;
+        align-items: center;
+        width: 80vw;
+        padding: 4vw;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+    .datos h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .datos h2{
+        font-size: 1vw;
+        margin: 0;
+    }
+    .redes h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .redes .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.9vw;
+    }
+    .iconos i{
+        font-size: 2vw;
+        color: black;
+    }
+    .iconos a{
+        border-radius: 50%;
+        transition: transform 0.25s;
+    }
+    .iconos a:hover{
+        transform: scale(1.2);
+    }
+    footer p{
+        background-color: rgb(89, 89, 89);
+        text-align: center;
+        color: white;
+        font-size: 0.8vw;
+        padding: 1.5vw;
+        margin: 0;
+    }
+}
+
+/*--- FORMATO LAPTOP L ---*/
+@media screen and (min-width: 1440PX){
+    /*CUERPO (BODY) de la pagina*/
+    #cuerpo{
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        font-family: "Nunito", sans-serif;
+        padding-top: 5vw;
+    }
+
+
+    /*ENCABEZADO*/
+    /* Encabezado (nav) */
+    #navegador{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 5vw; /* Puedes ajustar el tamaño según la vista */
+        z-index: 1000; /* Asegúrate de que tenga un valor alto para que esté encima del contenido */
+        background-color: white; /* Asegúrate de que tenga un fondo visible */
+        box-shadow: 0 0 18px rgba(202, 33, 33, 0.5);
+        
+    }
+
+    #navNombre{
+        font-size: 2vw;
+        font-weight: bold;
+        color: rgb(190, 8, 8);
+    }
+
+    .login-button {
+        background-color: rgb(190, 8, 8);
+        color: rgb(255, 255, 255);
+        font-size: 1vw;
+        padding: 8px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    #navegador:hover{
+        background-color: rgb(255, 251, 251);
+        transition: 0.3s;
+    }
+
+    .nav-link::before{
+        content:"";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 1.8vw;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+        border-top: 0.1VW solid black;
+        border-bottom: 0.1VW solid black;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+
+    
+    /*MAIN*/
+    /* FORMULARIO */
+
+    .signupFrm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        width: 30%;
+        padding: 2vw 5vw 2vw 5vw;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(92, 99, 105, .5);
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+
+    .title {
+        font-size: 2vw; /* Título más grande en móviles */
+        text-align: center;
+        margin-bottom: 2.5vw;
+    }
+
+    .inputContainer {
+        position: relative;
+        height: 3.5vw;
+        width: 100%;
+        margin-bottom: 2vw;
+    }
+
+    .input {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #DADCE0;
+        border-radius: 7px;
+        font-size: 1vw;
+        outline: none;
+        background: none;
+        z-index: 1;
+        padding: 0.5vw 2vw;
+    }
+
+    ::placeholder {
+        color: transparent;
+    }
+
+    .label {
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        padding: 0 0.5vw;
+        background-color: white;
+        color: #aeafb1;
+        font-size: 1vw;
+        transition: 0.5s;
+        z-index: 0;
+    }
+
+    .contenedorBotonRegistrar {
+        text-align: center;
+    }
+
+    .submitBtn {
+        text-align: center;
+        padding: 0.5vw 2vw;
+        border: none;
+        background-color: rgb(190, 8, 8);
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1vw;
+        margin: 0;
+    }
+
+    .submitBtn:hover {
+        background-color: rgb(219, 10, 10);
+        transform: translateY(-1px);
+        text-align: center;
+    }
+
+    .input:focus + .label {
+        top: -1vw;
+        left: 0.5vw;
+        z-index: 10;
+        font-size: 1vw;
+        font-weight: 600;
+        color: black;
+    }
+
+    .input:focus {
+        border: 2px solid rgb(202, 33, 33);
+    }
+
+    .input:not(:placeholder-shown) + .label {
+        top: -1vw;
+        left: 0.5vw;
+        z-index: 10;
+        font-size: 1vw;
+        font-weight: 600;
+    }
+
+    #contenedor-botonVolver{
+        display: flex;
+        justify-content: center;
+    }
+
+    #botonVolver{
+        color: #aeafb1;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        width: 5vw;
+        height: 1.3vw;
+    }
+
+    #botonVolver h3{
+        height: 1.3vw;
+        font-size: 1.2vw;
+        margin: 0;
+        margin-right: 0.4vw;
+    }
+    #botonVolver p{
+        height: 1.3vw;
+        font-size: 1vw;
+        margin: 0;
+    }
+
+    /* CARRITO */
+    .icono-carrito a{
+        position: fixed;
+        width: 70px; 
+        height: 70px;
+        bottom: 4vw; 
+        right: 4vw;
+        line-height: 76px;
+        background-color: black;
+        border-radius: 50%;
+        text-align: center;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+        color: white;
+        font-size: 35px;
+        z-index: 1000;
+    }
+
+    .contenedor-carrito{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0; left: 0;
+        min-height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.395);
+    }
+
+    #carrito{
+        width: 25%;
+        height: 80vh;
+        background-color: white;
+    }
+    .contenedor-carrito #productosAgregadosAlCarrito{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: scroll;
+        height: 55vh;
+        margin: 0;
+        padding: 4vw;
+    }
+    ::-webkit-scrollbar{
+        -webkit-appearance: none;
+    }
+
+    ::-webkit-scrollbar:vertical {
+        width: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #797979;
+        border-radius: 20px;
+    }
+
+    #carritoParteSuperior{
+        display: flex;
+        justify-content: space-between; /* Distribuye los elementos a los extremos */
+        align-items: center; /* Alinea verticalmente los elementos */
+        padding: 1vw 1vw;
+        background-color: black;
+    }
+
+    #carritoParteSuperior i{
+        color: white;
+        font-size: 1vw;
+        padding: 0;
+    }
+
+    #carritoParteSuperior h2{
+        font-size: 1.5vw;
+        font-weight: bold;
+        color: rgb(236, 236, 236);
+        width: 35vw;
+        margin: 0;
+    }
+
+    #productosAgregadosAlCarrito p{
+        text-align: center;
+    }
+
+    #carrito h3{
+        font-size: 1.5vw;
+        font-weight: bold;
+        padding: 1vw 2vw;
+    }
+
+    #botonesCarrito{
+        display: flex;
+        justify-content: space-between; /* Distribuye los elementos a los extremos */
+        align-items: center; /* Alinea verticalmente los elementos */
+        margin: 0vw 2vw;
+    }
+    .carrito-button {
+        background-color: black;
+        color: rgb(255, 255, 255);
+        font-size: 1vw;
+        padding: 8px 20px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+
+    /*PIE DE PÁGINA*/
+    footer{
+        background-color: rgb(255, 255, 255);
+    }
+    .contenedorDatosRedes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 20vw;
+        border-top: solid;
+    }
+    .datosYredes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 20vw;
+        justify-items: center;
+        align-items: center;
+        width: 80vw;
+        padding: 4vw;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+    .datos h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .datos h2{
+        font-size: 1vw;
+        margin: 0;
+    }
+    .redes h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .redes .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.9vw;
+    }
+    .iconos i{
+        font-size: 2vw;
+        color: black;
+    }
+    .iconos a{
+        border-radius: 50%;
+        transition: transform 0.25s;
+    }
+    .iconos a:hover{
+        transform: scale(1.2);
+    }
+    footer p{
+        background-color: rgb(89, 89, 89);
+        text-align: center;
+        color: white;
+        font-size: 0.8vw;
+        padding: 1.5vw;
+        margin: 0;
+    }
+}

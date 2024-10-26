@@ -1,0 +1,442 @@
+/*--- FORMATO MOBILE ---*/
+
+/*CUERPO (BODY) de la pagina*/
+#cuerpo{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "Nunito", sans-serif;
+}
+
+
+/*ENCABEZADO*/
+nav{
+    background-color: white;
+    border-bottom: 5px solid black;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+}
+#contenedorImagenLogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+#contenedorImagenLogo img{
+    height: 25vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+}
+
+.login-button {
+    background-color: #2cbdf2;
+    color: #000000;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+    
+.login-button:hover {
+    box-shadow: 0 0 8px rgb(72, 190, 216);
+}
+    
+#botonAbrirMenu{
+    border: none;
+    font-size: 1.25rem;
+}
+
+#botonAbrirMenu:focus, #botonCerrarMenu:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link{
+    position: relative;
+}
+
+.submitBtnCerrar {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.submitBtnCerrar:hover {
+    box-shadow: 0 0 8px rgb(98, 98, 98);
+}
+
+#botonCerrarSesion{
+    display: none;
+}
+
+
+
+/*MAIN*/
+main{
+    display: grid;
+    grid-template-rows: auto;
+}
+
+#mensaje h2{
+    color: rgb(162, 162, 162);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+/* BOTONES */
+
+#contenedorBotones{
+  text-align: center;
+}
+
+#botonFinalizar{
+    padding: 15px 30px;
+    border: none;
+    background-color: #2cbdf2;
+    color: rgb(0, 0, 0);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+ 
+}
+
+#botonVaciar{
+    padding: 15px 30px;
+    border: none;
+    background-color: #2cbdf2;
+    color: rgb(0, 0, 0);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+  
+}
+
+#botonFinalizar:hover {
+    background-color: rgb(72, 190, 216);
+    transform: translateY(-2px);
+}
+
+#botonVaciar:hover {
+    background-color: rgb(72, 190, 216);
+    transform: translateY(-2px);
+}
+
+
+/* CARTAS */
+
+#container-carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+#titulo-carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#productosAñadidos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.card-body h5{
+    font-size: 1vw;
+}
+.card-body p{
+    font-size: 0.9vw;
+}
+
+
+/*PIE DE PÁGINA*/
+footer{
+    background-color: rgb(255, 255, 255);
+}
+.contenedorDatosRedes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.datosYredes{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12vw;
+    justify-items: center;
+    align-items: center;
+    width: 50vw;
+    padding: 4vw;
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+}
+
+.datos h1{
+    font-weight: bold;
+    font-size: 4.6vw;
+    padding-bottom: 3vw;
+}
+.datos h2{
+    font-size: 3.6vw;
+    margin: 0;
+}
+
+.redes h1{
+    font-weight: bold;
+    font-size: 4.6vw;
+    padding-bottom: 3vw;
+}
+.redes .iconos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 3.3vw;
+}
+.iconos i{
+    font-size: 5.6vw;
+    color: black;
+}
+.iconos a{
+    border-radius: 50%;
+    transition: transform 0.25s;
+}
+.iconos a:hover{
+    transform: scale(1.2);
+}
+
+footer p{
+    background-color: rgb(89, 89, 89);
+    text-align: center;
+    color: white;
+    font-size: 3vw;
+    padding: 5vw;
+    margin: 0;
+}
+
+
+
+/*--- FORMATO TABLET ---*/
+@media screen and (min-width: 768px){
+    /*ENCABEZADO*/
+    #contenedorImagenLogo img{
+        height: 20vw;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+    }
+
+
+    /*MAIN*/
+    #presentacion{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30vw;
+        padding-bottom: 60vw;
+        height: 15vw;
+    }
+    
+
+    /*PIE DE PÁGINA*/
+    footer{
+        background-color: rgb(255, 255, 255);
+    }
+    .contenedorDatosRedes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .datosYredes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 20vw;
+        justify-items: center;
+        align-items: center;
+        width: 80vw;
+        padding: 4vw;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+    .datos h1{
+        font-weight: bold;
+        font-size: 3vw;
+        padding-bottom: 3vw;
+    }
+    .datos h2{
+        font-size: 2vw;
+        margin: 0;
+    }
+    .redes h1{
+        font-weight: bold;
+        font-size: 3vw;
+        padding-bottom: 3vw;
+    }
+    .redes .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.8vw;
+    }
+    .iconos i{
+        font-size: 4vw;
+        color: black;
+    }
+    .iconos a{
+        border-radius: 50%;
+        transition: transform 0.25s;
+    }
+    .iconos a:hover{
+        transform: scale(1.2);
+    }
+    footer p{
+        background-color: rgb(89, 89, 89);
+        text-align: center;
+        color: white;
+        font-size: 1.5vw;
+        padding: 3vw;
+        margin: 0;
+    }
+}
+
+/*--- FORMATO LAPTOP ---*/
+@media screen and (min-width: 1024PX){
+    /*ENCABEZADO*/
+    #contenedorImagenLogo img{
+        height: 10vw;
+        padding-top: 1.5vw;
+        padding-bottom: 1.5vw;
+    }
+
+    .nav-link::before{
+        content:"";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+        border-bottom: 0.4VW solid #ffd900;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+
+
+    /*MAIN*/
+    #presentacion{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 8vw;
+        padding-bottom: 30vw;
+        height: 15vw;
+    }
+    #saludo h1{
+        color: black;
+        text-align: center;
+        font-size: 8vw;
+        margin-bottom: 3vw;
+    }
+    #saludo p{
+        color: black;
+        font-size: 2vw;
+        text-align: center;
+    }
+
+    /* CARRUSEL */
+    .carousel-inner{
+        height: 35vw;
+    }
+    .carousel-item{
+        height: 35vw;
+    }
+
+
+    /*PIE DE PÁGINA*/
+    footer{
+        background-color: rgb(255, 255, 255);
+    }
+    .contenedorDatosRedes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 20vw;
+        border-top: solid;
+    }
+    .datosYredes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 20vw;
+        justify-items: center;
+        align-items: center;
+        width: 80vw;
+        padding: 4vw;
+        margin-top: 15vw;
+        margin-bottom: 15vw;
+    }
+    .datos h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .datos h2{
+        font-size: 1vw;
+        margin: 0;
+    }
+    .redes h1{
+        font-weight: bold;
+        font-size: 1.5vw;
+        padding-bottom: 3vw;
+    }
+    .redes .iconos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        gap: 0.9vw;
+    }
+    .iconos i{
+        font-size: 2vw;
+        color: black;
+    }
+    .iconos a{
+        border-radius: 50%;
+        transition: transform 0.25s;
+    }
+    .iconos a:hover{
+        transform: scale(1.2);
+    }
+    footer p{
+        background-color: rgb(89, 89, 89);
+        text-align: center;
+        color: white;
+        font-size: 0.8vw;
+        padding: 1.5vw;
+        margin: 0;
+    }
+}

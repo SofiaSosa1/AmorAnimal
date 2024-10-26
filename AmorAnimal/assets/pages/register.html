@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estiloRegister.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Registrarse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+<body id="cuerpo">
+
+    <!-- Este es el encabezado del sitio -->
+    <header>
+        <!-- fixed-top -->
+        <nav id="navegador" class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a id="navNombre" class="navbar-brand" href="/index.html">AMOR ANIMAL</a>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvas NavbarLabel">
+                    <div class="offcanvas-header">
+                        <h3>Menú</h3>
+                        <button id="botonCerrarMenu" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2" aria-current="page" href="/index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2" href="/assets/pages/tienda.html">Tienda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2" href="/assets/pages/mascotasPerdidas.html">Mascotas Perdidas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2" href="/index.html#contacto">Contacto</a>
+                            </li>
+                        
+                        </ul>
+                    </div> 
+                </div>
+                <button id="botonAbrirMenu" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    
+    <main>
+        <div class="signupFrm">
+            <form id="formulario">
+                <h1 class="title">Registrarse</h1>
+    
+                <div class="inputContainer">
+                    <input type="text" class="input" id="nombre" placeholder="nombre" autocomplete="off">
+                    <label class="label">Nombre</label>
+                </div>
+
+                <div class="inputContainer">
+                    <input type="text" class="input" id="apellido" placeholder="apellido" autocomplete="off">
+                    <label class="label">Apellido</label>
+                </div>
+
+                <div class="inputContainer">
+                    <input type="text" class="input" id="DNI" placeholder="DNI" autocomplete="off">
+                    <label class="label">DNI</label>
+                </div>
+
+                <div class="inputContainer">
+                    <input type="email" class="input" id="email" placeholder="email" autocomplete="off">
+                    <label class="label">Email</label>
+                </div>
+
+                <div class="inputContainer">
+                    <input type="password" class="input" id="contraseña" placeholder="contraseña" autocomplete="off">
+                    <label class="label">Constraseña</label>
+                </div>
+                <div class="contenedorBotonRegistrar">
+                    <button type="submit" class="submitBtn" id="botonAcceso" value="Acceso">Crear cuenta</button>
+                </div>
+            </form>
+            </div>
+
+            <div id="contenedor-botonVolver">
+                <a href="/assets/pages/login.html" id="botonVolver"> 
+                    <h3>⮜</h3>
+                    <p>Volver</p>
+                </a>
+            </div>
+            
+    </main>
+    <!-- Este es el pie de pagina -->
+    <footer>
+        <div class="contenedorDatosRedes">
+            <div class="datosYredes">
+            <div class="datos">
+                <h1>LOCAL</h1>
+                <h2>Av. Álvarez Jonte 3299</h2>
+                <h2>C1407GOA CABA</h2>  
+            </div>
+            <div class="redes">
+                <h1>EN LAS REDES</h1>
+                <div class="iconos">
+                    <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                    <a href="https://twitter.com/?lang=es"><i class="bi bi-twitter"></i></a>
+                    <a href="https://ar.linkedin.com/"><i class="bi bi-linkedin"></i></a>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        
+        <p>&copy 2024 Grip Sports Argentina</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/register.js"></script>
+</body>
+</html>
