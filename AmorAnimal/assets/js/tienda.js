@@ -44,7 +44,7 @@ function cargarProductosEnCarrusel() {
                         <h5 class="card-title">${producto.nombre}</h5>
                         <p class="card-text">Precio: $${producto.precio}</p>
                         <p class="card-text">${producto.descripcion}</p>
-                        <button class="btn btn-primary" onclick="agregarAlCarrito(${j})">Añadir al carrito</button>
+                        <button class="btn btn-danger" onclick="agregarAlCarrito(${j})">Añadir al carrito</button>
                     </div>
                 </div>`;
         }

@@ -144,6 +144,30 @@ sel-indicators input{
 }
 
 
+/*CARRUSEL PRODUCTOS*/
+.carousel-inner .carousel-item {
+    padding: 25px 0; /* Espacio entre las diapositivas */
+    flex: 1 1 0.1%; 
+}
+
+.carousel-inner .card {
+     /* Reduce el ancho de cada carta */
+    max-width: 90vw; /* Establece un ancho máximo para las cartas */
+    margin: 0 10px; /* Margen entre cartas */
+}
+
+.card img {
+    height: 25vw; /* Ajusta la altura de la imagen */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+.card-title {
+    font-size: 1.1rem; /* Tamaño de la fuente del título */
+}
+
+.card-text {
+    font-size: 0.9rem; /* Tamaño de la fuente del texto */
+}
 
 
 /*CONTACTO*/
