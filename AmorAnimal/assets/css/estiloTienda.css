@@ -74,8 +74,30 @@
     display: none;
 }
 
+/*CARRUSEL PRODUCTOS*/
+.carousel-inner .carousel-item {
+    padding: 25px 0; /* Espacio entre las diapositivas */
+    flex: 1 1 0.1%; 
+}
 
+.carousel-inner .card {
+    flex: 1 1 1%; /* Reduce el ancho de cada carta */
+    max-width: 60px; /* Establece un ancho máximo para las cartas */
+    margin: 0 10px; /* Margen entre cartas */
+}
 
+.card img {
+    height: 10px; /* Ajusta la altura de la imagen */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+.card-title {
+    font-size: 1.1rem; /* Tamaño de la fuente del título */
+}
+
+.card-text {
+    font-size: 0.1rem; /* Tamaño de la fuente del texto */
+}
 
 /*MAIN*/
 main{

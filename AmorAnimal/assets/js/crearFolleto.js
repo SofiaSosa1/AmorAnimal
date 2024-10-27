@@ -21,6 +21,7 @@ function displaymascotaPublicada() {
             <h3>Nombre: ${pet.nombre}</h3>
             <p>Descripción: ${pet.descripcion}</p>
             <p>telefono: ${pet.telefono}</p>
+    
         `;
         publishedPetsContainer.appendChild(petElement);
     });
@@ -172,13 +173,11 @@ function publicarMascota(nombre, descripcion, telefono, imagen, plantilla) {
         <h3>${nombre}</h3>
         <p><strong>Descripción:</strong> ${descripcion}</p>
         <p><strong>Teléfono:</strong> ${telefono}</p>
+        <button type="button" class="btn btn-secondary" onclick="enviarEmailMascota('${encodeURIComponent(nombre)}', '${encodeURIComponent(descripcion)}', '${encodeURIComponent(telefono)}')">Lo encontré</button>
     `;
     mascotaDiv.appendChild(imagenElement);
     document.getElementById("mascotasPublicadas").appendChild(mascotaDiv);
-   
 }
-
-
 window.onload = function() {
     displaymascotaPublicada();
     verificarLogin();
@@ -206,4 +205,28 @@ window.onload = function() {
     }
 };
 
+document.addEventListener("DOMContentLoaded", function() {
+    emailjs.init("Bt4v9mN1cBxVunHe0");
+    console.log("EmailJS inicializado correctamente");
+});
 
+async function enviarEmailMascota(nombre, descripcion, telefono) {
+    try {
+        const response = await emailjs.send('sofisosaaa', 'mascota', {
+            pet_name: nombre,
+            pet_description: descripcion,
+            contact_phone: telefono,
+            user_email: 'sosa38205@gmail.com'
+        });
+        console.log('Correo electrónico enviado exitosamente:', response.status, response.text);
+        Swal.fire({
+            title: "Correo enviado",
+            text: "Se ha notificado al dueño de la mascota.",
+            icon: "success",
+            timer: 5000,
+            showConfirmButton: true
+        });
+    } catch (error) {
+        console.error('Error al enviar el correo electrónico:', error);
+    }
+}
