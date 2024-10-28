@@ -27,33 +27,30 @@ botonAcceso.onclick = (e) => {
     let email = document.getElementById("email").value;
     let contraseña = document.getElementById("contraseña").value;
 
-
-    if (nombre === "" || apellido === "" || dni === "" || email === "" || contraseña === "") {
-        alert("Falta completar algún campo");
- 
     const regexLetras = /^[A-Za-z\s]+$/;
     const regexDni = /^\d{1,10}$/; // Solo números y hasta 10 dígitos
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
-    if (nombre === "" || apellido === "" || dni === "" || email === "" || contraseña === "") {
-        alert("Falta completar algún campo");
-    } 
 
-    else if (!regexLetras.test(nombre)) {
+
+     if (!regexLetras.test(nombre)) {
         alert("El nombre no debe contener números.");
     } 
     else if (!regexLetras.test(apellido)) {
         alert("El apellido no debe contener números.");
-    } 
-
+    }
     else if (!regexDni.test(dni)) {
         alert("El DNI debe contener solo números y no más de 10 dígitos.");
     } 
- 
-      else if (!regexEmail.test(email)) {
+    else if (!regexEmail.test(email)) {
         alert("El correo electrónico debe tener un formato válido con '@' y un dominio.");
     } 
-    } else {
+    else if (nombre === "" || apellido === "" || dni === "" || email === "" || contraseña === "") {
+        alert("Falta completar algún campo");
+    }
+
+    
+    else {
      
         let usuariosRegistrados;
 

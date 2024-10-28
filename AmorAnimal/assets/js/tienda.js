@@ -7,6 +7,57 @@ class Producto{
     }
 }
 
+
+function cargarProductosEnCarrusel() {
+    const contenedorCarousel = document.getElementById("contenedorCarouselProductos");
+
+    if (!contenedorCarousel) {
+        console.error("No se encuentra el contenedor del carrusel de productos.");
+        return;
+    }
+
+    const productos = JSON.parse(localStorage.getItem("productos")) || [];
+
+    if (productos.length === 0) {
+        console.warn("No hay productos guardados en localStorage.");
+        return;
+    }
+
+    contenedorCarousel.innerHTML = "";
+
+    const cartasPorSlide = 3; // Número de cartas a mostrar por cada diapositiva
+    let slides = Math.ceil(productos.length / cartasPorSlide);
+
+    for (let i = 0; i < slides; i++) {
+        const item = document.createElement("div");
+        item.classList.add("carousel-item");
+        if (i === 0) item.classList.add("active"); // Solo el primer elemento es activo al inicio
+
+        let contenidoSlide = `<div class="d-flex justify-content-around">`;
+
+        for (let j = i * cartasPorSlide; j < (i + 1) * cartasPorSlide && j < productos.length; j++) {
+            const producto = productos[j];
+            contenidoSlide += `
+                <div class="card" >
+                    <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                    <div class="card-body">
+                        <h5 class="card-title">${producto.nombre}</h5>
+                        <p class="card-text">Precio: $${producto.precio}</p>
+                        <p class="card-text">${producto.descripcion}</p>
+                        <button class="btn btn-danger" onclick="agregarAlCarrito(${j})">Añadir al carrito</button>
+                    </div>
+                </div>`;
+        }
+
+        contenidoSlide += `</div>`;
+        item.innerHTML = contenidoSlide;
+        contenedorCarousel.appendChild(item);
+    }
+
+    console.log("Productos cargados en el carrusel:", productos);
+}
+
+ cargarProductosEnCarrusel();
 let formProductos = document.getElementById("formProductoNuevo");
 
 function esAdmin() {
@@ -16,7 +67,7 @@ function esAdmin() {
     if (loggedInUser === "Admin") {
         console.log("El usuario es admin, mostrando el formulario");
         formProductos.style.display = "block";
-    } else if(loggedInUser === "User1") {
+    } else if(loggedInUser === localStorage.getItem("loggedInUser")) {
         console.log("El usuario no es admin, ocultando el formulario");
         formProductos.style.display = "block"; 
     }
@@ -29,7 +80,9 @@ let listaProductos;
 
 function cargarProductosActuales(){
     if(localStorage.getItem("productos") == null){
-        listaProductos = [];
+        listaProductos = [
+            {imagen: "", nombre: "Juguete Soga", precio: 3500, descripcion: "Este Juguete está especialmente diseñada para la diversión de tu mascota, para aliviar el estrés y el aburrimiento, favoreciendo a su desarrollo físico y mental." }
+        ];
     }
     else{
         listaProductos = JSON.parse(localStorage.getItem("productos"));
@@ -121,10 +174,6 @@ function validarArchivo(input) {
         }
     }
 }
-
-
-
-
 
 
 
