@@ -80,7 +80,7 @@ function cargarMascotasPerdidas() {
                     <p>Descripción: ${mascota.descripcion}</p>
                     <p>Teléfono: ${mascota.telefono}</p>
                     <button  type="button" class="btn btn-danger" onclick="eliminarMascota(${index})">Eliminar</button>
-                   <button type="button" class="btn btn-secondary" onclick="editarMascota(${index})">Editar</button>
+                    <button type="button" class="btn btn-secondary" onclick="editarMascota(${index})">Editar</button>
                 `;
                 contenedor.appendChild(mascotaDiv);
             });
@@ -221,23 +221,20 @@ function eliminarProducto(index) {
 
 function cargarProductosPublicados() {
     const productosGuardados = localStorage.getItem("productos");
-    /*
-    const contenedor = document.getElementById("productosPublicadosUsuario");
-    contenedor.innerHTML = ''; // Limpiar contenido previo
-    */
+    const contenedorproductos = document.getElementById("productosPublicadosUsuario");
 
     if (productosGuardados) {
         let carta= "";
-        const contenedorproductos = document.getElementById("productosPublicadosUsuario");
+        
         listaProductos.forEach((producto, index) =>{
-            carta += `<div class="card" id="producto${index}" style="width: 18rem;">
+            carta += `<div class="card-productos-publicados" id="producto${index}" style="width: 18rem;">
             <img src="${producto.imagen}" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">${producto.nombre}</h5>
                     <p class="card-text">$${producto.precio}</p>
                     <p class="card-text2">${producto.descripcion}</p>
-                    <input type="submit" class="submitBtn" onclick="eliminarProducto(${index})" value="Eliminar">
-                    <input type="submit" class="editBtn" onclick="editarProducto(${index})" value="Editar">
+                    <input type="submit" class="submitBtn-productos-publicados" onclick="eliminarProducto(${index})" value="Eliminar">
+                    <input type="submit" class="editBtn-productos-publicados" onclick="editarProducto(${index})" value="Editar">
                 </div>
             </div>`;
             document.querySelector(`#producto${index} .editBtn`).style.display = "inline";
@@ -245,22 +242,6 @@ function cargarProductosPublicados() {
         });
         
         contenedorproductos.innerHTML = carta;
-        /*
-        const productos = JSON.parse(productosGuardados);
-        productos.forEach((producto, index) => {
-            const productoDiv = document.createElement("div");
-            productoDiv.classList.add("producto");
-
-            productoDiv.innerHTML = `
-                <h3>${producto.nombre}</h3>
-                    <p><strong>Precio:</strong> ${producto.precio}</p>
-                <p><strong>Descripción:</strong> ${producto.descripcion}</p>
-                
-                <button type="button" class="btn btn-danger" onclick="eliminarProducto(${index})">Eliminar</button>
-            `;
-            contenedor.appendChild(productoDiv);
-        });
-        */
     } else {
         contenedorproductos.innerHTML = '<p>No hay productos publicados.</p>';
     }

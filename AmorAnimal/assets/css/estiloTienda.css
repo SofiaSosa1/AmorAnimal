@@ -75,6 +75,8 @@
 }
 
 
+
+
 /*MAIN*/
 main{
     display: grid;
@@ -209,23 +211,6 @@ form button{
 }
 /* FIN DE FORMULARIO */
 
-.submitBtnCerrar {
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 14px;
-    padding: 8px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.submitBtnCerrar:hover {
-    box-shadow: 0 0 8px rgb(98, 98, 98);
-}
-
-#botonCerrarSesion{
-    display: none;
-}
 
 
 
@@ -247,7 +232,7 @@ form button{
 }
 
 
-/*PRODUCTOS*/
+/*CARTAS (PRODUCTOS DE LA TIENDA)*/
 #productosPublicadosUsuario{
     display: flex;
     justify-content: center;
@@ -257,10 +242,7 @@ form button{
     flex-wrap: wrap;
 }
 
-.card-img-top{
-    max-width: 100%;
-    height: 70vw;
-}
+
 
 /*botones de agregar al carrito*/
 .submitBtn {
@@ -271,15 +253,10 @@ form button{
     background-color: rgb(190, 8, 8);
     color: white;
     border-radius: 6px;
-    cursor: pointer;
     font-size: 16px;
     margin-top: 30px;
 }
 
-.submitBtn:hover {
-    background-color: #e84747;
-    transform: translateY(-2px);
-}
 
 
 
@@ -381,7 +358,7 @@ form button{
     color: white;
 }
 
-.card-img-top{
+.card-img-top-Carrito{
     max-width: 28vw;
     height: 27vw;
 }
@@ -492,12 +469,6 @@ footer p{
 /*--- FORMATO TABLET ---*/
 @media screen and (min-width: 768px){
     /*ENCABEZADO*/
-    #contenedorImagenLogo img{
-        height: 20vw;
-        padding-top: 3vw;
-        padding-bottom: 3vw;
-    
-    }
 
     /*MAIN*/
     #presentacion{
@@ -509,7 +480,37 @@ footer p{
         padding-bottom: 60vw;
         height: 15vw;
     }
-    
+
+    .card{
+        width: 100%; /* Tamaño fijo para el ancho de todas las cartas */
+        height: 100%; /* Tamaño fijo para el alto de todas las cartas */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 16px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    .card-body{
+        width: 100%;
+    }
+
+    .card-img-top{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-title{
+        display: -webkit-box;       /* Necesario para el truncado */
+        -webkit-box-orient: vertical;
+        height: 6em;                /* Ajusta la altura según el número de líneas */
+        line-height: 1.5em;
+        cursor: pointer;
+        line-clamp: 2;
+    }
+
 
     /*PIE DE PÁGINA*/
     footer{
@@ -1032,6 +1033,15 @@ footer p{
     .card-title-Carrito,
     .card-text-Carrito {
         text-align: left !important;
+    }
+
+    .card-title-Carrito{
+        display: -webkit-box;       /* Necesario para el truncado */
+        -webkit-box-orient: vertical;
+        height: 6em;                /* Ajusta la altura según el número de líneas */
+        line-height: 1.5em;
+        cursor: pointer;
+        line-clamp: 2;
     }
 
     #carrito h3{

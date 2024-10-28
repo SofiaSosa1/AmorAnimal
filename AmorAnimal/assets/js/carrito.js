@@ -5,13 +5,19 @@ let cerrarCarrito = document.querySelector('#carrito i');
 iconoCarrito.onclick = (e) =>{
     e.preventDefault();
     contenedorCarrito.style.display = 'flex';
-    contenedorCarrito.style.zIndex = '9999';  
+    contenedorCarrito.style.zIndex = '9999';
+    mostrarCarrito();
 }
 
 cerrarCarrito.onclick = (e) =>{
     e.preventDefault();
     contenedorCarrito.style.display = 'none';
 }
+
+
+
+
+
 
 
 
@@ -30,35 +36,47 @@ function mostrarCarrito(){
     }
     else{
         let cont = 0;
-        let listaAñadidos = [];
-        function cartas(){
-            listaAñadidos = JSON.parse(localStorage.getItem("productosAñadidos"));
 
-            let carta= "";
-            const contenedorprodAñadidos = document.getElementById("productosAgregadosAlCarrito");
-            listaAñadidos.forEach((producto, index) =>{
-                carta += `<div class="cardDelCarrito" id="producto${index}"">`;
-                carta += `<img src="${producto.imagen}" class="card-img-top-Carrito" alt="...">`;
-                    carta += `<div class="card-body-Carrito">`;
-                        carta += `<p class="card-title-Carrito">${producto.nombre}</p>`;
-                        carta += `<p class="card-text-Carrito">$${producto.precio}</p>`;
+
+            let listaAñadidos;
+
+                listaAñadidos = JSON.parse(localStorage.getItem("productosAñadidos"));
+
+                let carta= "";
+                const contenedorprodAñadidos = document.getElementById("productosAgregadosAlCarrito");
+                listaAñadidos.forEach((producto, index) =>{
+                    carta += `<div class="cardDelCarrito" id="producto${index}"">`;
+                    carta += `<img src="${producto.imagen}" class="card-img-top-Carrito" alt="...">`;
+                        carta += `<div class="card-body-Carrito">`;
+                            carta += `<p class="card-title-Carrito">${producto.nombre}</p>`;
+                            carta += `<p class="card-text-Carrito">$${producto.precio}</p>`;
+                        carta += `</div>`;
                     carta += `</div>`;
-                carta += `</div>`;
 
-                cont = index;
-            });
+                    cont = index;
+                });
+                
+                contenedorprodAñadidos.innerHTML = carta;
             
-            contenedorprodAñadidos.innerHTML = carta;
-        }
+        
 
-        document.onload = cartas();
+        
         mensajeVacio.style.display = "none";
         contenedorBotones.style.display = "block";
         productosAñadidos.style.display = "block";
     }
 }
 
-mostrarCarrito();
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -84,7 +102,7 @@ botonF.onclick = (e) =>{
 }
 
 botonV.onclick = (e) =>{
-    e.preventDefault()
+    e.preventDefault();
 
     localStorage.removeItem("productosAñadidos");
 

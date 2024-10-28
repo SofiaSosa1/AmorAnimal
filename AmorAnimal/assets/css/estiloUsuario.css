@@ -667,6 +667,47 @@ footer p{
         transition: 0.3s;
     }
 
+    /*productos publicados*/
+    #productosPublicadosUsuario{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 2vw;
+    }
+
+    .card-productos-publicados{
+        width: 100%; /* Tamaño fijo para el ancho de todas las cartas */
+        height: 100%; /* Tamaño fijo para el alto de todas las cartas */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 16px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    .submitBtn-productos-publicados{
+        padding: 0.5vw 1vw;
+        border: none;
+        background-color: rgb(190, 8, 8);
+        color: white;
+        border-radius: 6px;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+    .editBtn-productos-publicados{
+        padding: 0.5vw 1vw;
+        border: none;
+        background-color: rgb(190, 8, 8);
+        color: white;
+        border-radius: 6px;
+        font-size: 16px;
+        margin-top: 30px;
+    }
 
     /* CARRITO */
     .icono-carrito a{

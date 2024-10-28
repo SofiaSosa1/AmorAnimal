@@ -7,67 +7,6 @@ class Producto{
     }
 }
 
-
-function cargarProductosEnCarrusel() {
-    const contenedorCarousel = document.getElementById("contenedorCarouselProductos");
-
-    if (!contenedorCarousel) {
-        console.error("No se encuentra el contenedor del carrusel de productos.");
-        return;
-    }
-
-    const productos = JSON.parse(localStorage.getItem("productos")) || [];
-
-    if (productos.length === 0) {
-        console.warn("No hay productos guardados en localStorage.");
-        return;
-    }
-
-    contenedorCarousel.innerHTML = "";
-
-    const cartasPorSlide = 3; // Número de cartas a mostrar por cada diapositiva
-    let slides = Math.ceil(productos.length / cartasPorSlide);
-
-    for (let i = 0; i < slides; i++) {
-        const item = document.createElement("div");
-        item.classList.add("carousel-item");
-        if (i === 0) item.classList.add("active"); // Solo el primer elemento es activo al inicio
-
-        let contenidoSlide = `<div class="d-flex justify-content-around">`;
-
-        for (let j = i * cartasPorSlide; j < (i + 1) * cartasPorSlide && j < productos.length; j++) {
-            const producto = productos[j];
-            contenidoSlide += `
-                <div class="card" >
-                    <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
-                    <div class="card-body">
-                        <h5 class="card-title">${producto.nombre}</h5>
-                        <p class="card-text">Precio: $${producto.precio}</p>
-                        <p class="card-text">${producto.descripcion}</p>
-                        <button class="btn btn-danger" onclick="agregarAlCarrito(${j})">Añadir al carrito</button>
-                    </div>
-                </div>`;
-        }
-
-        contenidoSlide += `</div>`;
-        item.innerHTML = contenidoSlide;
-        contenedorCarousel.appendChild(item);
-    }
-
-    console.log("Productos cargados en el carrusel:", productos);
-}
-
-document.addEventListener("DOMContentLoaded", cargarProductosEnCarrusel);
-
-function agregarAlCarrito(index) {
-    let productos = JSON.parse(localStorage.getItem("productos")) || [];
-    let productosAñadidos = JSON.parse(localStorage.getItem("productosAñadidos")) || [];
-
-    productosAñadidos.push(productos[index]);
-    localStorage.setItem("productosAñadidos", JSON.stringify(productosAñadidos));
-    alert("Producto añadido al carrito");
-}
-
 let formProductos = document.getElementById("formProductoNuevo");
 
 function esAdmin() {
@@ -98,22 +37,22 @@ function cargarProductosActuales(){
 
     let carta= "";
     const contenedorproductos = document.getElementById("productosPublicadosUsuario");
- 
     listaProductos.forEach((producto, index) =>{
         carta += `<div class="card" id="producto${index}" style="width: 18rem;">
-        <img src="${producto.imagen}" class="card-img-top" alt="...">
-           <div class="card-body">
-                <h5 class="card-title">${producto.nombre}</h5>
-               <p class="card-text">$${producto.precio}</p>
-              <p class="card-text2">${producto.descripcion}</p>
-              <input type="submit" class="submitBtn" id="botonañadir${index}" value="Añadir al carrito">
-           </div>
+                    <img src="${producto.imagen}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                            <h5 class="card-title" onclick="toggleDescription(this)">${producto.nombre}</h5>
+                            <p class="card-text">$${producto.precio}</p>
+                            <p class="card-text">${producto.descripcion}</p>
+                            <input type="submit" class="submitBtn" id="botonañadir${index}" value="Añadir al carrito">
+                    </div>
         </div>`;
 
         cont = index
     });
     
     contenedorproductos.innerHTML = carta;
+
 
     let listaAñadidos;
 
@@ -142,6 +81,7 @@ function cargarProductosActuales(){
     }
 }
 
+/*<p class="card-text">${producto.descripcion}</p> */
 
 document.onload = cargarProductosActuales();
 
@@ -152,7 +92,12 @@ document.onload = cargarProductosActuales();
 
 
 
-productosActuales();
+
+
+
+
+
+
 
 function abrirSelector() {
     document.getElementById("fileInput").click();
@@ -176,6 +121,8 @@ function validarArchivo(input) {
         }
     }
 }
+
+
 
 
 
