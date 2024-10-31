@@ -16,7 +16,9 @@ function limpiarCampos() {
     document.getElementById("contraseña").value = "";
 }
 
-const formulario = document.getElementById("formulario");
+
+
+
 const botonAcceso = document.getElementById("botonAcceso");
 
 botonAcceso.onclick = (e) => {
@@ -30,10 +32,10 @@ botonAcceso.onclick = (e) => {
     const regexLetras = /^[A-Za-z\s]+$/;
     const regexDni = /^\d{1,10}$/; // Solo números y hasta 10 dígitos
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
 
 
-     if (!regexLetras.test(nombre)) {
+
+    if (!regexLetras.test(nombre)) {
         alert("El nombre no debe contener números.");
     } 
     else if (!regexLetras.test(apellido)) {
@@ -48,10 +50,7 @@ botonAcceso.onclick = (e) => {
     else if (nombre === "" || apellido === "" || dni === "" || email === "" || contraseña === "") {
         alert("Falta completar algún campo");
     }
-
-    
     else {
-     
         let usuariosRegistrados;
 
         if(localStorage.getItem("usuariosRegistrados") == null){
@@ -66,7 +65,7 @@ botonAcceso.onclick = (e) => {
             showConfirmButton: true,
             timer: 5000,
         })
-   
+
         let nuevoUsuario = new nuevoRegistro(nombre, apellido, dni, email, contraseña);
         usuariosRegistrados.push(nuevoUsuario);
 
@@ -74,7 +73,7 @@ botonAcceso.onclick = (e) => {
         localStorage.setItem("usuariosRegistrados", JSON.stringify(usuariosRegistrados));
 
         limpiarCampos();
-      
-        window.location.href = "../pages/usuario.html";
+
+        window.location.href = "../pages/usuario.html"; 
     }
 }

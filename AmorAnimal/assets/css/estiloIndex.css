@@ -132,20 +132,42 @@ sel-indicators input{
     position: absolute;
     top: 10%;  /* Ajusta según la posición que desees */
     left: 50%;
-        transform: translateX(-50%);
-        color: rgb(0, 0, 0);
-        font-size: 5vw;
-        font-weight: bold;
-        text-align: center;
-        background-color: rgba(231, 225, 225, 0.5);  /* Fondo semitransparente */
-        padding: 12vw 12vw;
-        width: 100%;
-        height: 40vw;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(231, 225, 225, 0.5);  /* Fondo semitransparente */
+    padding: 12vw 12vw;
+    width: 100%;
+    height: 40vw;
 }
 
+
+
 /*CARRUSEL PRODUCTOS*/
+
+#titulo_carrusel_productos{
+    text-align: center;
+    margin-top: 8vw;
+    margin-bottom: 1vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-top: 0.2vw solid rgb(190, 8, 8);
+    border-bottom: 0.2vw solid rgb(190, 8, 8);
+    padding: 0.6vw 0;
+}
+#carouselProductosNuevos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.3vw solid rgb(190, 8, 8);
+}
+#contenedorCarouselProductos{
+    width: 80%;
+}
 .carousel-inner .carousel-item {
-    padding: 15px 0; /* Espacio entre las diapositivas */
+    padding: 3.5vw 0; /* Espacio entre las diapositivas */
 
 }
 .carousel-inner .card {
@@ -153,11 +175,18 @@ sel-indicators input{
     max-width: 20%;
     max-height: 20%; /* Establece un ancho máximo para las cartas */
     margin: 0 2px; /* Margen entre cartas */
+    box-shadow: 0 0 15px 5px rgba(190, 8, 8, 0.545);
+}
+
+.contenedor_imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card img {
-    height: 80%; 
-   /* Ajusta la altura de la imagen */
+    width: 65%;
+    height: 100%;
     object-fit: cover; /* Mantiene la proporción de la imagen */
 }
 
@@ -167,6 +196,10 @@ sel-indicators input{
 .card-text {
     font-size: 0.8rem; /* Tamaño de la fuente del texto */
 }
+
+
+
+
 /*CONTACTO*/
 
 #contacto{

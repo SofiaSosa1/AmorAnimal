@@ -1,4 +1,14 @@
+
 document.addEventListener("DOMContentLoaded", function() {
+    /*REGISTRA AL ADMINISTRADOR*/
+    if(localStorage.getItem("usuariosRegistrados") == null){
+        usuariosRegistrados = [
+            {nombre: "Benito", apellido: "Perez", dni: 45963874, email: "admin1@gmail.com", contraseña: "coco159"}
+        ];
+
+        localStorage.setItem("usuariosRegistrados", JSON.stringify(usuariosRegistrados));
+    }
+
     document.getElementById("formularioLogin").addEventListener("submit", function(event) {
         event.preventDefault(); // Evitar el envío del formulario por defecto
 
@@ -21,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Dependiendo del email, determina si es admin o usuario regular
                 if (email === "admin1@gmail.com") {
-                    localStorage.setItem("loggedInUser", "Admin");
+                    localStorage.setItem("usuarioConectado", "Administrador");
                     Swal.fire({
                         title: "¡Bienvenido Administrador!",
                         icon: "success",
@@ -30,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         window.location.href = "../../index.html";
                     });
                 } else {
-                    localStorage.setItem("loggedInUser", usuario.nombre); // Guarda el nombre del usuario
+                    localStorage.setItem("usuarioConectado", usuario.nombre); // Guarda el nombre del usuario
                     Swal.fire({
                         title: "¡Ha iniciado sesión!",
                         icon: "success",

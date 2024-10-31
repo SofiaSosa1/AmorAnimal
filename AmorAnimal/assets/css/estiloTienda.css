@@ -171,15 +171,16 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: aqua;
 }
 
-#customButton{
-    background-color: white;
+.customButton{
+    background-color: rgb(250, 61, 61);
     color: black;
     border: 0.1vw solid black;
     font-size: 4.5vw;
 }
-#fileInput {
+.fileInput {
     display: none;
 }
 
@@ -187,7 +188,7 @@ form {
 
 
 /* Estilo para la vista previa de la imagen */
-#imagePreview {
+.imagePreview {
     margin-top: 20px;
     max-width: 100%; /* Hace que la imagen sea responsiva */
     display: none; /* Inicialmente oculta */
@@ -200,7 +201,7 @@ form {
     margin-top: 5vw;
 }
 
-form button{
+.botonPublicarProducto{
     background-color: black;
     color: white;
     padding: 10px 20px;
@@ -210,6 +211,36 @@ form button{
     font-size: 4.5vw;
 }
 /* FIN DE FORMULARIO */
+
+/*FORMULARIO PRODUCTOS USADOS*/
+#formProductoUsado textarea:focus {
+    outline: none;
+    border: 2px solid rgb(202, 33, 33); 
+    box-shadow: none; 
+}
+
+.form-label{
+    color: #aeafb1;
+    position: absolute;
+    top: 3vw;
+    left: 4vw;
+    padding: 0 1vw;
+    background-color: white;
+    font-size: 4vw;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+.form-control:focus + .form-label {
+    top: -1vw;
+    left: 0.5vw;
+    z-index: 10;
+    font-size: 1vw;
+    font-weight: 600;
+    color: black;
+}
+
+
 
 
 
@@ -244,7 +275,7 @@ form button{
 
 
 
-/*botones de agregar al carrito*/
+/*botones de agregar al carrito
 .submitBtn {
     display: block;
     margin-left: auto;
@@ -256,7 +287,7 @@ form button{
     font-size: 16px;
     margin-top: 30px;
 }
-
+*/
 
 
 
@@ -353,9 +384,9 @@ form button{
     align-items: center; /* Alinea verticalmente los elementos */
     width: 100%;
     margin: 0;
-    margin-bottom: 3vw;
-    background-color: black;
-    color: white;
+    margin-bottom: 1.5vw;
+    color: black;
+    border: 0.1vw solid black;
 }
 
 .card-img-top-Carrito{
@@ -788,13 +819,17 @@ footer p{
     /*MAIN*/
     /*Formulario*/
 
-    form {
-        width: 30%;
+    .contenedorFormProductoNuevo{
+        display: flex;
+        justify-content: center;
+    }
+
+    #formProductoNuevo{
+        width: 100%;
         padding: 2vw 4vw 2vw 4vw;
         border-radius: 8px;
         box-shadow: 0 10px 25px rgba(92, 99, 105, .5);
-        margin-top: 3vw;
-        margin-bottom: 3vw;
+        margin: 3vw 34vw;
     }
 
     .title {
@@ -859,8 +894,12 @@ footer p{
         font-size: 1vw;
         font-weight: 600;
     }
+
+    .contenedorSeleccionImagen{
+        margin-top: 7vw;
+    }
     
-    #customButton{
+    .customButton{
         background-color: white;
         color: black;
         border: 0.1vw solid black;
@@ -875,7 +914,7 @@ footer p{
         margin-top: 1.5vw;
     }
     
-    form button{
+    .botonPublicarProducto{
         background-color: black;
         color: white;
         padding: 1vw 1.5vw;
@@ -884,6 +923,63 @@ footer p{
         cursor: pointer;
         font-size: 1.2vw;
     }
+
+    #descripcion{
+        resize: none;
+    }
+
+    /*FORMULARIO PRODUCTOS USADOS*/
+
+    .contenedorFormProductoUsado{
+        display: flex;
+        justify-content: center;
+    }
+    #formProductoUsado{
+        width: 100%;
+        padding: 2vw 4vw 2vw 4vw;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(92, 99, 105, .5);
+        margin: 3vw 34vw;
+    }
+
+    .mb-3{
+        position: relative;
+        height: 3.5vw;
+        width: 100%;
+        margin-bottom: 5vw;
+    }
+
+    .form-label{
+        color: #aeafb1;
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        padding: 0 0.5vw;
+        background-color: white;
+        color: #aeafb1;
+        font-size: 1vw;
+        transition: 0.5s;
+        z-index: 0;
+    }
+    
+    .form-control:focus + .form-label {
+        top: -1vw;
+        left: 0.5vw;
+        z-index: 10;
+        font-size: 1vw;
+        font-weight: 600;
+        color: black;
+    }
+
+    .form-control:not(:placeholder-shown) + .form-label {
+        top: -1vw;
+        left: 0.5vw;
+        z-index: 10;
+        font-size: 1vw;
+        font-weight: 600;
+    }
+
+    
 
     #productosPublicadosUsuario{
         display: flex;
@@ -899,7 +995,7 @@ footer p{
         height: 17vw;
     }
 
-    /*botones de agregar al carrito*/
+    /*botones de agregar al carrito
     .submitBtn {
         display: block;
         margin-left: auto;
@@ -913,11 +1009,12 @@ footer p{
         margin-top: 30px;
     }
     
+    
     .submitBtn:hover {
         background-color: #e84747;
         transform: translateY(-2px);
     }
-
+    */
 
     /* CARRITO */
     .icono-carrito a{
@@ -1010,8 +1107,8 @@ footer p{
         width: 100%;
         margin: 0;
         margin-bottom: 1.5vw;
-        background-color: black;
-        color: white;
+        color: black;
+        border: 0.1vw solid black;
     }
 
     .card-img-top-Carrito{
@@ -1035,14 +1132,6 @@ footer p{
         text-align: left !important;
     }
 
-    .card-title-Carrito{
-        display: -webkit-box;       /* Necesario para el truncado */
-        -webkit-box-orient: vertical;
-        height: 6em;                /* Ajusta la altura según el número de líneas */
-        line-height: 1.5em;
-        cursor: pointer;
-        line-clamp: 2;
-    }
 
     #carrito h3{
         font-size: 1.5vw;

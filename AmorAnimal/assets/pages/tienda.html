@@ -49,38 +49,77 @@
 
     <!-- Esta es la parte principal del sitio -->
     <main>
-        <form id="formProductoNuevo" >
-            <h1 class="title">Agregue un nuevo producto</h1>
+        <div class="contenedorFormProductoNuevo">
+            <form id="formProductoNuevo" >
+                <h1 class="title">Agregue un nuevo producto</h1>
+    
+                <div class="inputContainer">
+                    <input type="text" class="input" id="nombre" placeholder="nombre" autocomplete="off">
+                    <label for="nombre" class="label">Nombre</label>
+                </div>
+    
+                <div class="inputContainer">
+                    <input type="text" class="input" id="precio" placeholder="precio" autocomplete="off">
+                    <label for="precio" class="label">Precio</label>
+                </div>
+    
+                <div class="mb-3">
+                    <textarea onkeydown="pulsar(event)" class="form-control" id="descripcion" rows="5" maxlength="200"></textarea>
+                    <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                </div>
+                
+                <div class="contenedorSeleccionImagen">
+                    <button type="button" class="customButton" onclick="abrirSelector(this)">Seleccionar archivo .jpg</button>
+                </div>
+    
+                <!-- Input de archivo oculto -->
+                <input type="file" class="fileInput" accept=".jpg" onchange="validarArchivo(this)" style="display:none;">
+                
+                <!-- Área de vista previa de la imagen -->
+                <img class="imagePreview" alt="Vista previa de la imagen"/>
+                
+                <div class="col-auto">
+                    <button type="button" class="botonPublicarProducto" onclick="guardarProductoUsadoEnLocal()">Publicar producto</button>
+                </div>
+            </form>
+        </div>
+        
 
-            <div class="inputContainer">
-                <input type="text" class="input" id="nombre" placeholder="nombre" autocomplete="off">
-                <label for="nombre" class="label">Nombre</label>
-            </div>
-
-            <div class="inputContainer">
-                <input type="text" class="input" id="precio" placeholder="precio" autocomplete="off">
-                <label for="precio" class="label">Precio</label>
-            </div>
-
-            <div class="inputContainer">
-                <input type="text" class="input" id="descripcion" placeholder="descripcion" autocomplete="off">
-                <label for="descripcion" class="label">Descripcion</label>
-            </div>
-            
-            <div class="contenedorSeleccionImagen">
-                <button type="button" id="customButton" onclick="abrirSelector()">Seleccionar archivo .jpg</button>
-            </div>
-
-            <!-- Input de archivo oculto -->
-            <input type="file" id="fileInput" accept=".jpg" onchange="validarArchivo(this)" style="display:none;">
-            
-            <!-- Área de vista previa de la imagen -->
-            <img id="imagePreview" alt="Vista previa de la imagen"/>
-            
-            <div class="col-auto">
-                <button type="button" id="botonPublicarProducto" onclick="guardarProductoUsadoEnLocal()">Publicar Producto</button>
-            </div>
-        </form>
+        <div class="contenedorFormProductoUsado">
+            <form id="formProductoUsado" >
+                <h1 class="title">Agregue su producto usado a la tienda</h1>
+    
+                <div class="inputContainer">
+                    <input type="text" class="input" id="nombre" placeholder="nombre" autocomplete="off" maxlength="38">
+                    <label for="nombre" class="label">Nombre</label>
+                </div>
+    
+                <div class="inputContainer">
+                    <input type="text" class="input" id="precio" placeholder="precio" autocomplete="off" maxlength="38">
+                    <label for="precio" class="label">Precio</label>
+                </div>
+    
+                <div class="mb-3">
+                    <textarea onkeydown="pulsar(event)" class="form-control" id="descripcion" rows="5" maxlength="200"></textarea>
+                    <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                </div>
+                
+                <div class="contenedorSeleccionImagen">
+                    <button type="button" class="customButton" onclick="abrirSelector(this)">Seleccionar archivo .jpg</button>
+                </div>
+    
+                <!-- Input de archivo oculto -->
+                <input type="file" class="fileInput" accept=".jpg" onchange="validarArchivo(this)" style="display:none;">
+                
+                <!-- Área de vista previa de la imagen -->
+                <img class="imagePreview" alt="Vista previa de la imagen"/>
+                
+                <div class="col-auto">
+                    <button type="button" class="botonPublicarProducto" onclick="guardarProductoUsadoEnLocal()">Publicar producto usado</button>
+                </div>
+            </form>
+        </div>
+        
             
 
         <div class="contenedor-productos">
@@ -137,7 +176,7 @@
                 </div>
                 <h3>Total: </h3>
                 <div id="botonesCarrito">
-                    <a href="#" id="botonFinalizarCompra" class="carrito-button">Finalizar compra</a>
+                    <a href="finalizarcompra.html" id="botonFinalizarCompra" class="carrito-button">Finalizar compra</a>
                     <a href="#" id="botonVaciar" class="carrito-button">Vaciar carrito</a>
                 </div>
                 

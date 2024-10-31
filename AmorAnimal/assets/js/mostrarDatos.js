@@ -1,21 +1,33 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const nombre = localStorage.getItem("nombre");
-    const apellido = localStorage.getItem("apellido");
-    const dni = localStorage.getItem("dni");
-    const direccion = localStorage.getItem("direccion");
-    const email = localStorage.getItem("email");
-    const botonCerrarSesion = document.getElementById("botonCerrarSesion");
+    const usuariosRegistrados = JSON.parse(localStorage.getItem("usuariosRegistrados")) || [];
+    const listaUsuarios = document.getElementById("listaUsuarios");
 
-    // Mostrar los datos en la página
-    document.getElementById("mostrarNombre").textContent = nombre;
-    document.getElementById("mostrarApellido").textContent = apellido;
-    document.getElementById("mostrarDNI").textContent = dni;
-    document.getElementById("mostrarDireccion").textContent = direccion;
-    document.getElementById("mostrarEmail").textContent = email;
-    botonCerrarSesion.style.display = "inline-block";
-});
+    // Limpiar el contenedor antes de agregar los datos
+    listaUsuarios.innerHTML = "";
 
-// Manejar múltiples dropdowns
+    // Mostrar los datos de cada usuario en la página
+    usuariosRegistrados.forEach(usuario => {
+        const usuarioDiv = document.createElement("div");
+        usuarioDiv.classList.add("usuario-item");
+
+        usuarioDiv.innerHTML = `
+            <p>Nombre: ${usuario.nombre}</p>
+            <p>Apellido: ${usuario.apellido}</p>
+            <p>DNI: ${usuario.dni}</p>
+            <p>Email: ${usuario.email}</p>
+            <p>Email: ${usuario.contraseña}</p>
+            <hr>
+        `;
+ 
+
+    const listaUsuarios = document.getElementById("listaUsuarios");
+        listaUsuarios.innerHTML = "";
+
+
+
+        listaUsuarios.appendChild(usuarioDiv);
+    });
+    // Manejar múltiples dropdowns
 document.querySelectorAll(".dropdown").forEach(dropdown => {
     const content = dropdown.querySelector(".dropdown-content");
 
@@ -24,6 +36,8 @@ document.querySelectorAll(".dropdown").forEach(dropdown => {
         content.style.display = content.style.display === "block" ? "none" : "block";
     });
 });
+});
+
 
 // Cerrar dropdowns si se hace clic fuera de ellos
 window.addEventListener("click", function() {
@@ -35,11 +49,11 @@ window.addEventListener("click", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const nombreUser = document.getElementById("botonLogin");
-    const loggedInUser = localStorage.getItem("loggedInUser");
-    if (loggedInUser) {
-        nombreUser.textContent = `Hola, ${loggedInUser}`;
+    const usuarioConectado = localStorage.getItem("usuarioConectado");
+    if (usuarioConectado) {
+        nombreUser.textContent = `Hola, ${usuarioConectado}`;
         nombreUser.classList.add("login-link");
-        nombreUser.href = "./usuario.html"; 
+        nombreUser.href = "../pages/usuario.html"; 
     } else {
         nombreUser.textContent = "Iniciar sesión";
         nombreUser.href = "../pages/login.html"; 
@@ -51,7 +65,7 @@ const botonCerrarSesion = document.getElementById("botonCerrarSesion");
 
 botonCerrarSesion.addEventListener("click", function() {
     // Eliminar el usuario de localStorage
-    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("usuarioConectado");
 
     // Redirigir al index.html
     window.location.href = "../../index.html"; 
@@ -145,14 +159,14 @@ function guardarProducto(producto) {
 
 
 function verificarLogin() {
-    const usuarioLogueado = localStorage.getItem("loggedInUser");
+    const usuarioLogueado = localStorage.getItem("usuarioConectado");
     return usuarioLogueado !== null;
 }
 function guardarProductoUsadoEnLocal() {
     const nombre = document.getElementById('nombre').value;
     const precio = document.getElementById('precio').value;
     const descripcion = document.getElementById('descripcion').value;
-    const imagen = document.getElementById("imagePreview").src;
+    const imagen = document.querySelector(".imagePreview").src;
 
     const Numeros = /^\d+(\.\d{1,2})?$/; // Solo números y opcionalmente con dos decimales
     const Letras = /^[A-Za-z\s]+$/; // Solo letras y espacios
@@ -175,23 +189,33 @@ function guardarProductoUsadoEnLocal() {
     else if (!Letras.test(descripcion)) {
         alert("La descripción no debe contener números.");
     } 
-    else if (imagen === "" || document.getElementById("fileInput").files.length === 0) {
+    else if (imagen === "" || document.querySelector(".fileInput").files.length === 0) {
         alert("Debe seleccionar una imagen.");
     } 
     else {
-        if (nombre === "" || precio === "" || descripcion === "" || document.getElementById("imagePreview").style.display === "none") {
+        if (nombre === "" || precio === "" || descripcion === "" || document.querySelector(".imagePreview").style.display === "none") {
             alert("Falta completar algún campo");
         } else {
+            
+            let usuarioConectado = localStorage.getItem("usuarioConectado");
+
             const producto = {
                 nombre: nombre,
                 precio: precio,
                 descripcion: descripcion,
                 imagen: imagen,
             };
+
+            if(usuarioConectado === "Administrador"){
+                guardarProducto(producto);
         
-            guardarProducto(producto);
+                publicarProducto();
+            }
+            else if(usuarioConectado !== "Administrador" && usuarioConectado !== null){
+                console.log("Aa")
+            }
         
-            publicarProducto();
+            
         
             document.getElementById("nombre").value = "";
             document.getElementById("precio").value = "";

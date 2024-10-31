@@ -77,7 +77,6 @@
 
 
 
-
 /*MAIN*/
 main{
     display: grid;
@@ -85,28 +84,29 @@ main{
 }
 
 
-/* FORMULARIO */
-.signupFrm {
-    display: flex;
+#formProductoNuevo {
+    display: none;
     justify-content: center;
     align-items: center;
+    margin-left: 35%;
 }
 
 form {
     width: 80%;
     padding-top: 7vw ;
+    padding-bottom: 7vw ;
     padding-left: 9vw;
     padding-right: 9vw;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(92, 99, 105, .5);
-    margin-top: 20vw;
+    border: 1px solid #d0d1d9b0;
+    margin-top: 25vw;
     margin-bottom: 20vw;
+
 }
 
 .title {
     font-size: 8vw; /* Título más grande en móviles */
     text-align: center;
-    margin-bottom: 5vw;
 }
 
 .inputContainer {
@@ -145,29 +145,6 @@ form {
     z-index: 0;
 }
 
-.contenedorBotones {
-    text-align: center;
-}
-
-.submitBtn {
-    text-align: center;
-    padding: 3vw 8vw;
-    border: none;
-    background-color: rgb(190, 8, 8);
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 4vw;
-    margin-top: 1vw;
-    margin-bottom: 3vw;
-}
-
-.registrar {
-    text-align: center;
-    margin-top: 1vw;
-    font-size: 4vw;
-}
-
 .input:focus + .label {
     top: -2vw;
     left: 2vw;
@@ -189,22 +166,50 @@ form {
     font-weight: 600;
 }
 
+.contenedorSeleccionImagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* TEXTO NUEVO CLIENTE */
-#textoNuevoCliente{
-    background-color: #a22c2c;
+#customButton{
+    background-color: white;
+    color: black;
+    border: 0.1vw solid black;
+    font-size: 4.5vw;
+}
+#fileInput {
+    display: none;
+}
+
+/* Estiliza el botón personalizado */
+
+
+/* Estilo para la vista previa de la imagen */
+#imagePreview {
+    margin-top: 20px;
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    display: none; /* Inicialmente oculta */
+}
+
+.col-auto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vw;
+}
+
+form .submitBtn{
+    background-color: black;
     color: white;
-    padding: 12vw 5vw;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 4.5vw;
 }
-#textoNuevoCliente h5{
-    border-bottom: solid white;
-    background-color: #d0d1d9b0;
-    padding: 1vw;
-    margin-bottom: 6vw;
-}
-#textoNuevoCliente p{
-    margin: 0;
-}
+/* FIN DE FORMULARIO */
+
 
 
 
@@ -276,12 +281,6 @@ footer p{
 /*--- FORMATO TABLET ---*/
 @media screen and (min-width: 768px){
     /*ENCABEZADO*/
-    #contenedorImagenLogo img{
-        height: 20vw;
-        padding-top: 3vw;
-        padding-bottom: 3vw;
-    
-    }
 
     /*MAIN*/
     #presentacion{
@@ -293,7 +292,37 @@ footer p{
         padding-bottom: 60vw;
         height: 15vw;
     }
-    
+
+    .card{
+        width: 100%; /* Tamaño fijo para el ancho de todas las cartas */
+        height: 100%; /* Tamaño fijo para el alto de todas las cartas */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 16px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    .card-body{
+        width: 100%;
+    }
+
+    .card-img-top{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-title{
+        display: -webkit-box;       /* Necesario para el truncado */
+        -webkit-box-orient: vertical;
+        height: 6em;                /* Ajusta la altura según el número de líneas */
+        line-height: 1.5em;
+        cursor: pointer;
+        line-clamp: 2;
+    }
+
 
     /*PIE DE PÁGINA*/
     footer{
@@ -566,41 +595,37 @@ footer p{
         width: 100%;
         visibility: visible;
     }
-    
+
 
     /*MAIN*/
+    /*Finalizar compra*/
 
-    #contenedorLogin{
+    .contenedorCompraFinal{
+        width: 100%;
         display: flex;
-        justify-content: space-between; /* Distribuye los elementos a los extremos */
-        align-items: center; /* Alinea verticalmente los elementos */
-        margin-top: 3vw;
-        margin-bottom: 3vw;
-    }
-
-    /* FORMULARIO */
-    .signupFrm {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
+        justify-content:space-between;
+        padding: 0vw 15vw;
     }
 
     form {
-        width: 60%;
-        padding: 3vw 5vw 2vw 5vw;
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(92, 99, 105, .5);
+        width: 114%;
+        padding: 2vw 1.5vw;
+        border-radius: 30px;
+        border: 1px solid #d0d1d9b0;
         margin-top: 3vw;
         margin-bottom: 3vw;
     }
 
     .title {
-        font-size: 2vw; /* Título más grande en móviles */
-        text-align: center;
-        margin-bottom: 2.5vw;
+        font-size: 1.5vw;
+        text-align: left;
+        font-weight: bold;
     }
 
+    form p{
+        font-size: 0.9vw;
+        margin-bottom: 2.5vw;
+    }
     .inputContainer {
         position: relative;
         height: 3.5vw;
@@ -637,23 +662,6 @@ footer p{
         z-index: 0;
     }
 
-    .submitBtn {
-        text-align: center;
-        padding: 0.5vw 2vw;
-        border: none;
-        background-color: rgb(190, 8, 8);
-        color: white;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 1vw;
-        margin-bottom: 1vw;
-        transition-duration: 0.2s;
-    }
-    .submitBtn:hover {
-        background-color: rgb(219, 10, 10);
-        transform: translateY(-2px);
-    }
-
     .input:focus + .label {
         top: -1vw;
         left: 0.5vw;
@@ -667,44 +675,243 @@ footer p{
         border: 2px solid rgb(202, 33, 33);
     }
 
-    .input:not(:placeholder-shown) + .label {
+    .input:not(:placeholder-shown) + .label{
         top: -1vw;
         left: 0.5vw;
         z-index: 10;
         font-size: 1vw;
         font-weight: 600;
     }
-
-    .registrar {
-        text-align: center;
-        margin-top: 1vw;
+    
+    #customButton{
+        background-color: white;
+        color: black;
+        border: 0.1vw solid black;
         font-size: 1vw;
+        padding: 0.6vw 2vw;
+    }
+    
+    .col-auto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5vw;
     }
 
-
-    /* TEXTO NUEVO CLIENTE */
-    #textoNuevoCliente{
-        background-color: #a22c2c;
+    .contenedorBoton{
+        display: flex;
+        justify-content: right;
+    }
+    
+    form .submitBtn{
+        background-color: rgb(190, 8, 8);
         color: white;
-        padding: 12vw 5vw;
-        width: 50%;
+        font-size: 0.9vw;
+        font-weight: bold;
+        padding: 0.8vw 0.8vw;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
     }
-    #textoNuevoCliente h5{
-        border-bottom: solid white;
-        background-color: #d0d1d9b0;
-        padding: 1vw;
+
+    /*dosColumnasInput*/
+    #dosColumnasInput{
+        display: flex;
+        justify-content: space-between;
+        gap: 1.2vw;
+    }
+
+
+    /*ENTREGA*/
+
+    /*domicilio*/
+    .contenedorBotonesEntrega{
+        display: flex;
+        justify-content: space-between; /* Distribuye los elementos a los extremos */
+        align-items: center;
+        margin-bottom: 3vw;
+    }
+
+    #botonEnDomicilio{
+        width: 100%;
+        border-radius: 30px 0px 0px 30px;
+        background-color: rgb(190, 8, 8);
+        color: white;
+        font-size: 0.9vw;
+        font-weight: bold;
+        padding: 0.5vw 0.5vw;
+        border: 0.1vw solid rgb(190, 8, 8);
+    }
+
+    #botonEnLocal{
+        width: 100%;
+        border-radius: 0px 30px 30px 0px;
+        background-color: rgb(255, 223, 223);
+        color: rgb(190, 8, 8);
+        font-size: 0.9vw;
+        font-weight: bold;
+        padding: 0.5vw 0.5vw;
+        border: 0.1vw solid rgb(190, 8, 8);
+    }
+
+    #dosColumnasInput-distinto{
+        display: flex;
+        justify-content: space-between;
+    }
+    #numero{
+        width: 80%;
+    }
+    #infoAdicional{
+        width: 100%;
+    }
+
+    /*domicilio*/
+
+    #domicilio{
+        display: block;
+    }
+
+    /*local*/
+
+    #local{
+        display: none;
+    }
+
+    .direccionLocal{
+        display: flex;
+        flex-direction: row; /* Coloca los elementos en columna */
+        align-items: center; /* Opcional: centra los elementos horizontalmente */
+        gap: 8px;
+        margin-bottom: 4vw;
+        border: 0.1vw solid #d0d1d9b0;
+        border-radius: 15px;
+        padding: 1vw 2vw;
+    }
+
+    .direccionLocal i{
+        font-size: 1.6vw;
+    }
+
+    .direccionLocal p{
+        margin-bottom: 0;
+    }
+
+    #nombrelocal{
+        font-weight: bold;
+    }
+
+    #local #tituloRetiroLocal{
+        margin-bottom: 0.8vw;
+        color: #7b7c82;
+    }
+
+    .opcionRetiro{
+        display: flex;
+        justify-content: space-between;
+        border: 0.1vw solid #d0d1d9b0;
+        padding: 0.5vw 0.8vw;
+        border-radius: 5px;
+        font-size: 0.85vw;
         margin-bottom: 2vw;
-        font-size: 1.2vw;
     }
-    #textoNuevoCliente p{
+
+    .opcionRetiro .textoRetiro{
         margin: 0;
-        font-size: 1vw;
+        padding: 0;
+    }
+
+    #gratis{
+        padding-left: 1vw;
+        padding-right: 0.2vw;
+        border-left:0.1vw solid #d0d1d9b0;
+    }
+
+    
+    /*RESUMEN DE COMPRA*/
+
+    .contenedor_resumenDeCompra{
+        width: 40%;
+        border-radius: 30px;
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+    .resumenDeCompra{
+        padding: 1.8vw 1.8vw;
+        border-radius: 30px 30px 0px 0px;
+        border: 1px solid #d0d1d9b0;
+    }
+
+    .tituloResumenCompra{
+        border-bottom: 1px solid #d0d1d9b0;
+        margin-bottom: 1.5vw;
+    }
+
+    .tituloResumenCompra h3{
+        font-size: 1.05vw;
+        font-weight: bold;
+        color: rgb(190, 8, 8);
+    }
+
+
+
+
+    .cardDelCarrito{
+        display: flex;
+        justify-content: space-between; /* Distribuye los elementos a los extremos */
+        align-items: center; /* Alinea verticalmente los elementos */
+        width: 100%;
+        margin: 0;
+        margin-bottom: 1.5vw;
+        color: black;
+        border: 0.1vw solid rgb(190, 8, 8);
+    }
+
+    .card-img-top-Carrito{
+        max-width: 8vw;
+        height: 7vw;
+    }
+
+    .card-body-Carrito{
+        width: 100%;
+        padding: 0 0.8vw;
+        font-size: 0.8vw;
+    }
+
+    .card-body-Carrito p {
+        margin-bottom: 0.1vw;
+    }
+
+    .card-body-Carrito,
+    .card-title-Carrito,
+    .card-text-Carrito {
+        text-align: left !important;
+    }
+
+
+
+
+
+    .totalCompra{
+        display: flex;
+        justify-content: space-between;
+        height: 6%;
+        border-radius: 0px 0px 30px 30px;
+        background-color: rgb(190, 8, 8);
+        color: white;
+        padding: 1.3vw 2vw;
+        margin: 0;
+    }
+
+    .totalCompra h3{
+        font-size: 1.5vw;
+        font-weight: bold;
     }
 
 
     /*PIE DE PÁGINA*/
     footer{
         background-color: rgb(255, 255, 255);
+        margin-top: 8vw;
     }
     .contenedorDatosRedes{
         display: flex;
